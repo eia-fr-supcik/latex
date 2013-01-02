@@ -1,0 +1,20 @@
+\RequirePackage{fontspec,xunicode}
+\RequirePackage[
+  a4paper, width=16cm, height=24.5cm, left=25mm, top=20mm,
+  headheight=8mm, headsep=3mm
+]{geometry}
+\RequirePackage{color}
+\RequirePackage[usenames,dvipsnames,svgnames,table]{xcolor}
+
+\defaultfontfeatures{Mapping=tex-text} % To support LaTeX quoting style
+\setmainfont[Mapping=tex-text]{Liberation Sans}
+\setmonofont[Mapping=tex-text]{Liberation Mono}
+\titleformat*{\section}{\Large\bfseries\sffamily\color{eia-gray}}
+\titleformat*{\subsection}{\large\bfseries\sffamily\color{eia-gray}}
+\titleformat*{\subsubsection}{\bfseries\sffamily\color{eia-gray}}
+
+\definecolor{eia-blue}{RGB}{0,124,183}
+\definecolor{eia-gray}{RGB}{172,163,154}
+\definecolor{blue3015}{RGB}{0,161,209}
+
+
