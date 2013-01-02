@@ -105,8 +105,15 @@
 
 \runningheader%
   {\@title} {}{\@lecture { }/ \@students}
-\firstpagefooter{}{\@lecturer}{Page \thepage\ de \numpages}
-\runningfooter{École d'ingénieurs et d'architectes de Fribourg}{}{Page \thepage\ de \numpages}
+\firstpagefooter{}{\@lecturer}{%
+\iflanguage{german}{Seite}{Page}
+\thepage\ \iflanguage{german}{von}{de} \numpages}
+\runningfooter{%
+\iflanguage{german}%
+{Hochschule für Technik und Architektur Freiburg}%
+{École d'ingénieurs et d'architectes de Fribourg}%
+}{}{\iflanguage{german}{Seite}{Page}
+\thepage\ \iflanguage{german}{von}{de} \numpages}
 \runningfootrule
 \runningheadrule
 \shadedsolutions
@@ -136,15 +143,15 @@
   \draw [line width=0.7mm] (0, 0) rectangle +(10, 2);
   \draw [line width=0.5mm] (0, 1) -- +(10, 0);
   \draw [line width=0.2mm] (2.2, 0) -- +(0, 2);
-  \draw (0.2,1.5) node [right] {\large Prénom};
-  \draw (0.2,0.5) node [right] {\large Nom};
+  \draw (0.2,1.5) node [right] {\large \iflanguage{german}{Vorname}{Prénom}};
+  \draw (0.2,0.5) node [right] {\large \iflanguage{german}{Name}{Nom}};
   \end{tikzpicture}
   \hfill
   \begin{tikzpicture}[rounded corners=2mm]
   \draw [line width=0.7mm, red] (0, 0) rectangle +(5, 2);
   \draw [line width=0.5mm, red] (0, 1) -- +(5, 0);
   \draw [line width=0.2mm, red] (1.85, 0) -- +(0, 2);
-  \draw (0.2,1.5) node [red, right] {\large Points};
+  \draw (0.2,1.5) node [red, right] {\large \iflanguage{german}{Punkte}{Points}};
   \draw (0.2,0.5) node [red, right] {\large Note};
   \draw (4.8,0.5) node [red, left] {\large / 6.0};
   \draw (4.8,1.5) node [red, left] {\large / \numpoints};
@@ -153,7 +160,7 @@
 
   \begin{tikzpicture}[rounded corners=2mm]
   \draw [line width=0.3mm, red] (0, 0) rectangle +(15.88, 1.8);
-  \draw (0.2,1.3) node [right, red] {Remarques};
+  \draw (0.2,1.3) node [right, red] {\iflanguage{german}{Bemerkungen}{Remarques}};
   \end{tikzpicture}
 
   {\large\bf\color{eia-blue}\@examnotes}
