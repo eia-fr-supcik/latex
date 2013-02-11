@@ -24,6 +24,10 @@
 \newcommand{\lecture}[1]{%
   \renewcommand{\@lecture}{#1}%
 }
+\newcommand{\@lectureshort}{\@empty}
+\newcommand{\lectureshort}[1]{%
+  \renewcommand{\@lectureshort}{#1}%
+}
 \newcommand{\@students}{\@empty}
 \newcommand{\students}[1]{%
   \renewcommand{\@students}{#1}%
@@ -104,10 +108,9 @@
 }
 
 \runningheader%
-  {\@title} {}{\@lecture { }/ \@students}
+  {\@title{}}{}{\@lectureshort{} / \@students{}}
 \firstpagefooter{}{\@lecturer}{%
-\iflanguage{german}{Seite}{Page}
-\thepage\ \iflanguage{german}{von}{de} \numpages}
+\iflanguage{german}{Seite}{page} \thepage\ \iflanguage{german}{von}{de} \numpages}
 \runningfooter{%
 \iflanguage{german}%
 {Hochschule für Technik und Architektur Freiburg}%
@@ -135,7 +138,7 @@
   {\LARGE\itshape\textcolor{eia-gray}{\@subtitle}}
   }
 
-  {\Large\bf\textcolor{eia-gray}{\@lecture { }/ \@students}}
+  {\Large\bf\textcolor{eia-gray}{\@lecture{} / \@students}}
   \ifexam
 
   \vspace{5mm}
